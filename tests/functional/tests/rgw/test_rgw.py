@@ -41,6 +41,6 @@ class TestRGWs(object):
 
     @pytest.mark.no_docker
     def test_rgw_http_endpoint(self, node, host):
-        # rgw frontends ip_addr is configured on eth1
-        ip_addr = host.interface("eth1").addresses[0]
+        # rgw frontends ip_addr is configured on ens5
+        ip_addr = host.interface("ens5").addresses[0]
         assert host.socket("tcp://{ip_addr}:{port}".format(ip_addr=ip_addr, port=8080)).is_listening

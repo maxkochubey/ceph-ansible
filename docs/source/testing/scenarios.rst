@@ -84,13 +84,13 @@ to follow (most of them are 1 line settings).
 
 * **interfaces**: some vagrant boxes (and linux distros) set specific
   interfaces. For Ubuntu releases older than Xenial it was common to have
-  ``eth1``, for CentOS and some Xenial boxes ``enp0s8`` is used. **However**
-  the public Vagrant boxes normalize the interface to ``eth1`` for all boxes,
+  ``ens5``, for CentOS and some Xenial boxes ``enp0s8`` is used. **However**
+  the public Vagrant boxes normalize the interface to ``ens5`` for all boxes,
   making it easier to configure them with Ansible later.
 
 .. warning::
 
-   Do *not* change the interface from ``eth1`` unless absolutely
+   Do *not* change the interface from ``ens5`` unless absolutely
    certain that is needed for a box. Some tests that depend on that
    naming will fail.
 
@@ -145,7 +145,7 @@ defining an interface vs. an IP on a monitor) which can help catch issues in
    [mons]
    mon0 monitor_address=192.168.5.10
    mon1 monitor_address=192.168.5.11
-   mon2 monitor_interface=eth1
+   mon2 monitor_interface=ens5
 
 .. _group_vars:
 

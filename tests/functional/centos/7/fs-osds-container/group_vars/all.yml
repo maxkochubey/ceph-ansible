@@ -3,7 +3,7 @@
 docker: true
 containerized_deployment: true
 cluster: test
-monitor_interface: eth1
+monitor_interface: ens5
 public_network: "192.168.55.0/24"
 cluster_network: "192.168.56.0/24"
 # OSD_FORCE_ZAP is only for Jewel, the function does not exist anymore on Luminous and above

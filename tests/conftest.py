@@ -80,9 +80,9 @@ def node(host, request):
     osd_ids = []
     osds = []
     cluster_address = ""
-    # I can assume eth1 because I know all the vagrant
+    # I can assume ens5 because I know all the vagrant
     # boxes we test with use that interface
-    address = host.interface("eth1").addresses[0]
+    address = host.interface("ens5").addresses[0]
     subnet = ".".join(ansible_vars["public_network"].split(".")[0:-1])
     num_mons = len(ansible_vars["groups"]["mons"])
     if osd_auto_discovery:
