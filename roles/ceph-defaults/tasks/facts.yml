@@ -227,7 +227,7 @@
 
 - name: set_fact rgw_hostname - fqdn
   set_fact:
-    rgw_hostname: "{% for key in ceph_current_status['servicemap']['services']['rgw']['daemons'].keys() %}{% if key == ansible_fqdn %}{{ key }}{% endif %}{% endfor %}"
+    rgw_hostname: "{% for key in ceph_current_status['servicemap']['services']['rgw']['daemons'].keys() %}{% if key == ansible_fqdn %}{{ key }}{% else %}{{ ansible_hostname }}{% endif %}{% endfor %}"
   when:
     - inventory_hostname in groups.get(rgw_group_name, []) or inventory_hostname in groups.get(nfs_group_name, [])
     - ceph_current_status['servicemap'] is defined
